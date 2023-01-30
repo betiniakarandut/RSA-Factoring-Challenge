@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-from factors_two_primes import *
+from read_factors_two_primes import *
 
 if __name__ == '__main__':
 
-    print(prime_fact(77))
+    print(print_factors)
