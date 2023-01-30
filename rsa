@@ -3,4 +3,4 @@ from read_factors_two_primes import *
 
 if __name__ == '__main__':
 
-    print(print_factors)
+    print(unix_time(print_factors))

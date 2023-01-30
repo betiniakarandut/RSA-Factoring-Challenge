@@ -24,9 +24,9 @@ def unix_time(function):
         end_resources.ru_stime - start_resources.ru_stime)
 
 
-def trial_division(n: int) -> int:
+def trial_division(x: int) -> int:
     """
-    Finds the smallest divisor, if any, of a given number `n`
+    Finds the smallest divisor, if any, of a given number `x`
     Returns:
         smallest divisor if found
         0 if n is prime
@@ -35,24 +35,33 @@ def trial_division(n: int) -> int:
     prime_factors = []
     divisor = 2
     n = x
+
     while divisor <= x:
-        if x%divisor == 0:
+        if x % divisor == 0:
             prime_factors.append(divisor)
-            x = x/divisor 
+            x = x / divisor
         else:
-            divisor += 1 #divisor = divisor + 1
+            divisor += 1   # divisor = divisor + 1
     p = prime_factors[0]
     q = prime_factors[1]
     return ("{}={}*{}".format(n, p, q))
 
 
 def print_factors():
+    """Prints result read from commandline.
+
+    Args:
+        None
+
+    Return:
+        Nothing
+    """
 
     with open(sys.argv[1], 'r') as prime:
         line = prime.readline()
         while line != '':
-            n = int(line)
-            rep = trial_division(n)
+            x = int(line)
+            rep = trial_division(x)
             print(rep)
 
             line = prime.readline()
